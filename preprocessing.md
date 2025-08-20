@@ -28,7 +28,9 @@ done < ~/samples/id.txt
 # Remove host sequence
 # ---------------------------
 # PRJNA1269778: Download sequences of Homo sapiens, Rinolophus ferromequinum, Miniopterus schrebersi, Myotis myotis.
-# PRJNA954561: Download sequences of Homo sapiens, Rhinolophus sinicus, Myotis pilosus, Miniopterus pusillus, Murina feae, Rousettus leschenaultii, Lyroderma lyra, Rhinolophus affinis, Hipposideros armiger, Miniopterus fuliginosus, Eonycteris spelaea, Hipposideros larvatus, Pipistrellus abramus, Eptesicus fuscus, Myotis davidii.
+# PRJNA954561: Download sequences of Homo sapiens, Rhinolophus sinicus, Myotis pilosus, Miniopterus pusillus, Murina feae,
+# Rousettus leschenaultii, Lyroderma lyra, Rhinolophus affinis, Hipposideros armiger, Miniopterus fuliginosus,
+# Eonycteris spelaea, Hipposideros larvatus, Pipistrellus abramus, Eptesicus fuscus, Myotis davidii.
 
 # Join genomes
 cat ~/bowtie2/ind_bow/*.fnas  > Mixed.fasta
