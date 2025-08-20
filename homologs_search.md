@@ -362,7 +362,7 @@ parallel --jobs "$NUM_PARALLEL_JOBS" run_hmmsearch ::: "$HMM_B"/multi/*.hmm ::: 
 
 
 # ========================
-# PHMMER SEARCH - Paralelo
+# PHMMER SEARCH
 # ========================
 
 run_phmmer() {
