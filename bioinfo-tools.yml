@@ -1,0 +1,88 @@
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+
+environments:
+    - name: metabiome-preprocessing
+    dependencies:
+      - fastqc
+      - multiqc
+      - trimmomatic
+      - samtools
+      - bowtie2
+      - trim-galore
+      - bamtools
+      - prinseq
+      - fastp
+      
+  - name: ensamblaje_env
+    dependencies:
+      - megahit
+      - spades
+      - seqkit
+      - quast
+      - busco
+      - kraken2
+      - samtools
+      - bowtie2
+      - metabat2
+      - concoct
+      - maxbin2
+      - das_tool
+      - prodigal
+      - diamond
+      - bbmap
+      - fastp
+
+  - name: eval_bins_env_checkm
+    dependencies:
+      - python=3.12.11
+      - gtdbtk
+      - checkm2
+      - eukcc
+      - hmmer
+      - prodigal
+      - scikit-learn
+      - numpy
+      - diamond
+      - tensorflow
+
+  - name: eval_bins_env_busco
+    dependencies:
+      - busco
+
+  - name: bakta_env
+    dependencies:
+      - bakta
+
+  - name: hmmer_env
+    dependencies:
+      - hmmer
+      - seqtk
+
+  - name: align_env
+    dependencies:
+      - mafft
+
+  - name: tree_env
+    dependencies:
+      - iqtree2
+
+  - name: biopython
+    dependencies:
+      - biopython
+
+  - name: ncbi
+    dependencies:
+      - ncbi-datasets-cli
+
+  - name: Hom_validation
+    dependencies:
+      - blast
+      - interproscan
+      - trimal
+
+  - name: prokka
+    dependencies:
+      - prokka
