@@ -53,12 +53,6 @@ done < ~/samples/id.txt
 
 
 # ---------------------------
-# Second QC
-# ---------------------------
-# .fastq in no_pareados/ directory
-conda run -n metabiome-preprocessing fastqc *.fq.gz
-
-# ---------------------------
 # Change of names
 # ---------------------------
 
@@ -85,5 +79,13 @@ while read sample_id; do
 
   echo "Processed sample: $sample_id"
 done < ~/samples/id.txt
+
+
+
+# ---------------------------
+# Second QC
+# ---------------------------
+# .fastq in fastp/ directory
+conda run -n metabiome-preprocessing fastqc *.fq.gz
 
 ```
