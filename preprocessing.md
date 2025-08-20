@@ -7,7 +7,7 @@
 # First QC
 # ---------------------------
 
-# .fastq in samples directory
+# .fastq in samples/ directory
 conda run -n metabiome-preprocessing fastqc *.fastq
 
 # ---------------------------
@@ -52,5 +52,6 @@ done < ~/samples/id.txt
 # ---------------------------
 # Second QC
 # ---------------------------
-conda run -n metabiome-preprocessing fastqc *.fastq
+# .fastq in no_pareados/ directory
+conda run -n metabiome-preprocessing fastqc *.fq.gz
 ```
