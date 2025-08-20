@@ -86,3 +86,7 @@ environments:
   - name: prokka
     dependencies:
       - prokka
+      
+  - name: amas
+    dependencies:
+      - amas
