@@ -121,7 +121,7 @@ conda run -n amas AMAS.py concat -i "$TRIM_DIR"/*.aln -f fasta -d aa -p "$CONCAT
 
 
 # ---------------------------
-# bUILD A TREE WITH IQ-TREE
+# BUILD A TREE WITH IQ-TREE
 # ---------------------------
 
 # base tree
