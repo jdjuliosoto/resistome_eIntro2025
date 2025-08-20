@@ -1,5 +1,5 @@
 # Assembly
-~
+
 #### In order to proceed with the assembly, it is necessary to download the busco, checkm2 and bakta databases.
 ```bash
 # checkm2
