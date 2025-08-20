@@ -35,9 +35,12 @@ done < ~/samples/id.txt
 # Join genomes
 cat ~/bowtie2/ind_bow/*.fnas  > Mixed.fasta
 
+# Index build
+conda run -n metabiome-preprocessing bowtie2-build --large-index Mixed.fasta Mix
+
 # Remove host
 while read sample_id; do
-  bowtie2 \
+  conda run -n metabiome-preprocessing bowtie2 \
     -x ~/bowtie2/ind_bow/Mix \
     -1 ~/trimgalore/${sample_id}_1_val_1.fq \
     -2 ~/trimgalore/${sample_id}_2_val_2.fq \
