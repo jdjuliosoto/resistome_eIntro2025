@@ -57,4 +57,33 @@ done < ~/samples/id.txt
 # ---------------------------
 # .fastq in no_pareados/ directory
 conda run -n metabiome-preprocessing fastqc *.fq.gz
+
+# ---------------------------
+# Change of names
+# ---------------------------
+
+while read sample_id; do
+  mv ~/bowtie2/no_pareados/"$sample_id"_unmapped.fq.1.gz ~/bowtie2/no_pareados/"$sample_id"_unmapped_1.fastq.gz
+  mv ~/bowtie2/no_pareados/"$sample_id"_unmapped.fq.2.gz ~/bowtie2/no_pareados/"$sample_id"_unmapped_2.fastq.gz
+done < ~/samples/id.txt
+
+# ---------------------------
+# Remove duplicates
+# ---------------------------
+
+while read sample_id; do
+
+  conda run -n metabiome-preprocessing fastp \
+  -i ~/bowtie2/no_pareados/"$sample_id"_unmapped_1.fastq \
+  -I ~/bowtie2/no_pareados/"$sample_id"_unmapped_2.fastq \
+  -o ~/fastp/"$sample_id"_1.fastq \
+  -O ~/fastp/"$sample_id"_2.fastq \
+  --length_required 100 \
+  --qualified_quality_phred 20 \
+  --dedup \
+  --thread 20
+
+  echo "Processed sample: $sample_id"
+done < ~/samples/id.txt
+
 ```
