@@ -136,8 +136,8 @@ conda run -n tree_env iqtree \
   -s "/home/omar/Proyecto/analisis/tree/busco/concatenated.out" \
   -m LG+G+F \
   -nt "$THREADS" \
-  -bb 100 \
-  -alrt 100 \
+  -bb 1000 \
+  -alrt 1000 \
   -t "$TREE_OUT/phylo_tree.treefile" \
   -redo \
   -pre "$TREE_OUT/phylo_tree_ufboot"
