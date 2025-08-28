@@ -138,7 +138,7 @@ cd "$CARD_FIL"
 cut -f2 filtrado.tsv > organisms.txt
 mkdir -p "$CARD_FIL/card_sp"
 cd "$CARD_FIL/card_sp"
-"$SCRIPTS/download_sp.sh"
+# manual download
 
 # MAKE LIST.TXT
 for file in "$CARD_FIL"/card_sp/*.fna; do
