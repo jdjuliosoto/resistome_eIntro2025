@@ -52,7 +52,7 @@ find "$HOMOLOGY_TAB" -type f -name '*_tab.txt' -print0 \
   | xargs -0 grep -hv "^#" > "$HOMOLOGY_TAB"/all_hits_raw.txt
 
 for f in "$HOMOLOGY_TAB"/*_tab.txt; do
-    # Filters lines without comments and with e-value > 0.001, saves the file name
+    # Filters lines without comments and with e-value < 0.001, saves the file name
     awk -v file="$(basename "$f")" '!/^#/ && $5 > 0.001 {print file}' "$f" >> "$HOMOLOGY_TAB"/files_evalue_gt_0.001.txt
 done
 
